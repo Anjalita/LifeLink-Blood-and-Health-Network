@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>LifeLink: Blood and Health Network</title>
+	<style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            background-image: url(blood.jpg);
+            filter: brightness(100%);
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            text-align: center;
+            margin-top: 50px;
+            font-size: 1.5cm;
+            color: #3f34a4;
+            font-weight: 900;
+        }
+		.search-container {
+    position: absolute;
+    top: 70px; /* Adjusted to bring it closer to the top */
+    right: 50px; /* Adjusted for alignment with the right edge */
+    display: flex;
+    align-items: center;
+    gap: 7px; /* Space between input and icon */
+    text-align: right;
+}
+
+#searchInput {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.searchbtn img {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}
+
+        table {
+            margin: 0 auto;
+            border-collapse: collapse;
+            width: 80%;
+            margin-bottom: 50px;
+        }
+        td, th {
+            border: 2px solid black;
+            padding: 10px;
+            text-align: left;
+            font-weight: 600;
+        }
+        th {
+            background-color: grey;
+            color: white;
+            font-size: 0.8cm;
+        }
+        .test-results-table th {
+            background-color: #f4f4f4;
+        }
+        .test-results-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        .highlight {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+	<h1>Blood Test Results</h1>
+    <div class="search-container">
+        <input type="text" id="searchInput" placeholder="Search">
+        <div class="searchbtn">
+            <img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210180758/Untitled-design-(28).png" alt="search-icon">
+        </div>
+    </div>
+	</div>
+	<table>
+		<div class="test-results-container">
+			
+			<table class="test-results-table">
+				<thead>
+					<tr>
+						<th style="background-color: grey;">Complete Blood Count (CBC)</th>
+						<th style="background-color: grey;">See laboratory reference range</th>
+					</tr>
+					<tr>
+						<td>Blood Glucose</td>
+						<td>70-99 mg/dL</td>
+					</tr>
+					<tr>
+						<td>Cholesterol</td>
+						<td>Less than 200 mg/dL</td>
+					</tr>
+					<tr>
+						<td>Triglycerides</td>
+						<td>Less than 150 mg/dL</td>
+					</tr>
+					<tr>
+						<td>Hemoglobin A1c</td>
+						<td>4.0-5.6%</td>
+					</tr>
+					<tr>
+						<td>Sodium</td>
+						<td>135-145 mmol/L</td>
+					</tr>
+					<tr>
+						<td>Potassium</td>
+						<td>3.5-5.0 mmol/L</td>
+					</tr>
+					<tr>
+						<td>Calcium</td>
+						<td>8.5-10.5 mg/dL</td>
+					</tr>
+					<tr>
+						<td>Creatinine</td>
+						<td>0.6-1.2 mg/dL</td>
+					</tr>
+					<tr>
+						<td>Uric Acid</td>
+						<td>3.5-7.2 mg/dL</td>
+					</tr>
+					<tr>
+						<td>Liver Enzymes (AST)</td>
+						<td>10-40 U/L</td>
+					</tr>
+					<tr>
+						<td>Liver Enzymes (ALT)</td>
+						<td>7-56 U/L</td>
+					</tr>
+					<tr>
+						<td>Thyroid Stimulating Hormone (TSH)</td>
+						<td>0.4-4.0 μIU/mL</td>
+					</tr>
+					<tr>
+						<td>Vitamin D</td>
+						<td>20-50 ng/mL</td>
+					</tr>
+					<tr>
+						<td>Vitamin B12</td>
+						<td>200-900 pg/mL</td>
+					</tr>
+					<tr>
+						<td>Folate</td>
+						<td>3.0-17.0 ng/mL</td>
+					</tr>
+					<tr>
+						<td>Iron</td>
+						<td>60-170 μg/dL</td>
+					</tr>
+					<tr>
+						<td>Urea</td>
+						<td>7-20 mg/dL</td>
+					</tr>
+					<tr>
+						<td>Magnesium</td>
+						<td>1.7-2.2 mg/dL</td>
+					</tr>
+					<tr>
+						<td>Phosphorus</td>
+						<td>2.5-4.5 mg/dL</td>
+					</tr>
+					<tr>
+						<td>Albumin</td>
+						<td>3.5-5.0 g/dL</td>
+					</tr>
+					<tr>
+						<td>Globulin</td>
+						<td>2.0-3.5 g/dL</td>
+					</tr>
+					<tr>
+						<td>Total Protein</td>
+						<td>6.0-8.3 g/dL</td>
+					</tr>
+					<tr>
+						<td>CRP (C-Reactive Protein)</td>
+						<td>Less than 10 mg/L</td>
+					</tr>
+					<tr>
+						<td>ESR (Erythrocyte Sedimentation Rate)</td>
+						<td>0-20 mm/hr</td>
+					</tr>
+					<tr>
+						<td>Prostate-Specific Antigen (PSA)</td>
+						<td>Less than 4.0 ng/mL</td>
+					</tr>
+					<tr>
+						<td>Hemoglobin</td>
+						<td>13.8-17.2 g/dL</td>
+					</tr>
+					<tr>
+						<td>Hematocrit</td>
+						<td>40.7-50.3%</td>
+					</tr>
+					<tr>
+						<td>Platelet Count</td>
+						<td>150-450 × 10³/μL</td>
+					</tr>
+					<tr>
+						<td>White Blood Cell Count</td>
+						<td>4.5-11.0 × 10³/μL</td>
+					</tr>
+					<tr>
+						<td>Red Blood Cell Count</td>
+						<td>4.7-6.1 million cells/μL</td>
+					</tr>
+					<tr>
+						<td>Vitamin A</td>
+						<td>20-80 μg/dL</td>
+					</tr>
+					<tr>
+						<td>Vitamin C</td>
+						<td>0.6-2.0 mg/dL</td>
+					</tr>
+					<tr>
+						<td>Vitamin E</td>
+						<td>5.5-17.0 mg/dL</td>
+					</tr>
+					<tr>
+						<td>Vitamin K</td>
+						<td>0.2-1.2 ng/mL</td>
+					</tr>
+					<tr>
+						<td>Testosterone</td>
+						<td>300-1000 ng/dL</td>
+					</tr>
+					<tr>
+						<td>Estradiol</td>
+						<td>15-350 pg/mL</td>
+					</tr>
+					<tr>
+						<td>Fasting Insulin</td>
+						<td>2.6-24.9 μIU/mL</td>
+					</tr>
+					<tr>
+						<td>Glycated Albumin</td>
+						<td>11.0-16.0%</td>
+					</tr>
+					<tr>
+						<td>Albumin-to-Creatinine Ratio</td>
+						<td>Less than 30 mg/g</td>
+					</tr>
+					<tr>
+						<td>Renin</td>
+						<td>0.3-3.7 ng/mL/hr</td>
+					</tr>
+					<tr>
+						<td>Aldosterone</td>
+						<td>4.0-31.0 ng/dL</td>
+					</tr>
+					<tr>
+						<td>Cortisol</td>
+						<td>6.0-23.0 μg/dL</td>
+					</tr>
+					<tr>
+						<td>Dehydroepiandrosterone Sulfate (DHEA-S)</td>
+						<td>35-430 μg/dL</td>
+					</tr>
+					<tr>
+						<td>Growth Hormone</td>
+						<td>0-10 ng/mL</td>
+					</tr>
+					<tr>
+						<td>Beta-Human Chorionic Gonadotropin (β-hCG)</td>
+						<td>Less than 5.0 IU/L</td>
+					</tr>
+					<tr>
+						<td>Anti-Müllerian Hormone (AMH)</td>
+						<td>1.0-8.0 ng/mL</td>
+					</tr>
+					<tr>
+						<td>Thyroxine (T4)</td>
+						<td>4.5-12.0 μg/dL</td>
+					</tr>
+					<tr>
+						<td>Triiodothyronine (T3)</td>
+						<td>80-200 ng/dL</td>
+					</tr>
+					<tr>
+						<td>Thyroid Peroxidase Antibodies (TPOAb)</td>
+						<td>Less than 35 IU/mL</td>
+					</tr>
+					<tr>
+						<td>Antinuclear Antibodies (ANA)</td>
+						<td>Negative</td>
+					</tr>
+					<tr>
+						<td>Rheumatoid Factor (RF)</td>
+						<td>Less than 14 IU/mL</td>
+					</tr>
+					<tr>
+						<td>Anti-CCP Antibodies</td>
+						<td>Less than 20 U/mL</td>
+					</tr>
+					<tr>
+						<td>HIV Test</td>
+						<td>Negative</td>
+					</tr>
+					<tr>
+						<td>Hepatitis B Surface Antigen (HBsAg)</td>
+						<td>Negative</td>
+					</tr>
+					<tr>
+						<td>Hepatitis C Antibody (HCV Ab)</td>
+						<td>Negative</td>
+					</tr>
+					<tr>
+						<td>Syphilis Test</td>
+						<td>Negative</td>
+					</tr>
+					<tr>
+						<td>Lyme Disease Test</td>
+						<td>Negative</td>
+					</tr>
+					<tr>
+						<td>Magnesium</td>
+						<td>1.7-2.2 mg/dL</td>
+					</tr>
+					<tr>
+						<td>Phosphorus</td>
+						<td>2.5-4.5 mg/dL</td>
+					</tr>
+					<tr>
+						<td>Albumin</td>
+						<td>3.5-5.0 g/dL</td>
+					</tr>
+					
+				</tbody>
+			</table>
+		</div>
+		
+	</table>
+	
+	<script>
+        function highlightText(text, searchTerm) {
+            const regex = new RegExp(`(${searchTerm})`, 'gi');
+            return text.replace(regex, '<span class="highlight">$1</span>');
+        }
+
+        document.getElementById('searchInput').addEventListener('input', function() {
+            var input = document.getElementById('searchInput');
+            var filter = input.value.toUpperCase();
+            var table = document.querySelector('.test-results-table');
+            var rows = table.getElementsByTagName('tr');
+
+            for (var i = 1; i < rows.length; i++) {
+                var cells = rows[i].getElementsByTagName('td');
+                var rowVisible = false;
+
+                for (var j = 0; j < cells.length; j++) {
+                    var cell = cells[j];
+                    var cellText = cell.textContent || cell.innerText;
+
+                    if (cellText.toUpperCase().includes(filter)) {
+                        rowVisible = true;
+                        cell.innerHTML = highlightText(cellText, input.value);
+                    } else {
+                        cell.innerHTML = cellText;
+                    }
+                }
+
+                rows[i].style.display = rowVisible ? '' : 'none';
+            }
+        });
+    </script>
+<script src="ok.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-auth.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-database.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>LifeLink: Blood and Health Network</title>
+    <link rel="stylesheet" href="style6.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            background-image: url(blood.jpg);
+            filter: brightness(100%);
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            text-align: center;
+            margin-top: 50px;
+            font-size: 1.5cm;
+            color: #3f34a4;
+            font-weight: 900;
+        }
+        .search-container {
+            position: absolute;
+            top: 70px; 
+            right: 50px; 
+            display: flex;
+            align-items: center;
+            gap: 7px; 
+            text-align: right;
+        }
+
+        #searchInput {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        .searchbtn img {
+            width: 24px;
+            height: 24px;
+            cursor: pointer;
+        }
+
+        table {
+            margin-top: 50px;
+            border-collapse: collapse;
+            width: 80%;
+            margin-bottom: 50px;
+            margin-left: 130px;
+            align-items: center;
+            justify-content: center;
+        }
+        td, th {
+            border: 2px solid black;
+            padding: 10px;
+            text-align: left;
+            font-weight: 600;
+        }
+        th {
+            background-color: grey;
+            color: white;
+            font-size: 0.8cm;
+        }
+        .test-results-table th {
+            background-color: #f4f4f4;
+        }
+        .test-results-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        .highlight {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <h1>Local Blood Availability</h1>
+    <div class="search-container">
+        <input type="text" id="searchInput" placeholder="Search">
+        <div class="searchbtn">
+            <img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210180758/Untitled-design-(28).png" alt="search-icon">
+        </div>
+    </div>
+    
+    <table class="test-results-table">
+        <tr>
+            <th style="color: white; background-color: grey;">Blood Type</th>
+            <th style="color: white; background-color: grey;">Availability</th>
+            <th style="color: white; background-color: grey;">Location</th>
+            <th style="color: white; background-color: grey;">Phone Number</th>
+        </tr>
+        <tr>
+            <td>All</td>
+            <td>Available</td>
+            <td>Baptist Hospital</td>
+            <td>080-23330323</td>
+        </tr>
+        <tr>
+            <td>All</td>
+            <td>Available</td>
+            <td>Bangalore Children's Hospital</td>
+            <td>080-28600252</td>
+        </tr>
+        <tr>
+            <td>All</td>
+            <td>Available</td>
+            <td>Bangalore Hospital</td>
+            <td>080-26565494</td>
+        </tr>
+        <tr>
+            <td>B+ A+</td>
+            <td>Available</td>
+            <td>Bhagwan Mahaveer Jain Hospital</td>
+            <td>080-22207640</td>
+        </tr>
+        <tr>
+            <td>All</td>
+            <td>Available</td>
+            <td>Karnataka Red Cross Blood Bank</td>
+            <td>080-22268435</td>
+        </tr>
+        <tr>
+            <td>A+ O+</td>
+            <td>Available</td>
+            <td>KIMS Hospital</td>
+            <td>080-26673056</td>
+        </tr>
+        <tr>
+            <td>All</td>
+            <td>Available</td>
+            <td>Lions Blood Bank</td>
+            <td>080-22266807</td>
+        </tr>
+        <tr>
+            <td>B+ A O+</td>
+            <td>Available</td>
+            <td>MS Ramaiah Hospital</td>
+            <td>080-23606545</td>
+        </tr>
+        <tr>
+            <td>B+ A</td>
+            <td>Available</td>
+            <td>NIMHANS</td>
+            <td>080-26995000</td>
+        </tr>
+        <tr>
+            <td>All</td>
+            <td>Available</td>
+            <td>Rotary Blood Bank</td>
+            <td>080-25293486</td>
+        </tr>
+        <tr>
+            <td>B+ B</td>
+            <td>Available</td>
+            <td>Sagar Apollo Hospital</td>
+            <td>080-26536700</td>
+        </tr>
+        <tr>
+            <td>B+</td>
+            <td>Available</td>
+            <td>Sanjay Gandhi Hospital</td>
+            <td>080-26564516</td>
+        </tr>
+        <tr>
+            <td>B+</td>
+            <td>Available</td>
+            <td>Vanivilas Hospital</td>
+            <td>080-26705206</td>
+        </tr>
+        <tr>
+            <td>B+</td>
+            <td>Available</td>
+            <td>Victoria Hospital</td>
+            <td>080-26701150</td>
+        </tr>
+        <tr>
+            <td>B+</td>
+            <td>Available</td>
+            <td>Unique Blood Bank</td>
+            <td>080-26700685</td>
+        </tr>
+        <tr>
+            <td>B A</td>
+            <td>Available</td>
+            <td>Seshadripuram Apollo Hospital</td>
+            <td>080-46688888</td>
+        </tr>
+    </table>
+</body>
+<script>
+    function highlightText(text, searchTerm) {
+        const regex = new RegExp(`(${searchTerm})`, 'gi');
+        return text.replace(regex, '<span class="highlight">$1</span>');
+    }
+
+    document.getElementById('searchInput').addEventListener('input', function() {
+        var input = document.getElementById('searchInput');
+        var filter = input.value.toUpperCase();
+        var table = document.querySelector('.test-results-table');
+        var rows = table.getElementsByTagName('tr');
+
+        for (var i = 1; i < rows.length; i++) {
+            var cells = rows[i].getElementsByTagName('td');
+            var rowVisible = false;
+
+            for (var j = 0; j < cells.length; j++) {
+                var cell = cells[j];
+                var cellText = cell.textContent || cell.innerText;
+
+                if (cellText.toUpperCase().includes(filter)) {
+                    rowVisible = true;
+                    cell.innerHTML = highlightText(cellText, input.value);
+                } else {
+                    cell.innerHTML = cellText;
+                }
+            }
+
+            rows[i].style.display = rowVisible ? '' : 'none';
+        }
+    });
+</script>
+</html>

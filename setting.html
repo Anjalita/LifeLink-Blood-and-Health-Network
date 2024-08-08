@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="setting.css">
+    <title>LifeLink: Blood and Health Network</title>
+</head>
+<body>
+    <div class="settings-container">
+        <h2>Settings</h2>
+        <form id="settingsForm">
+            <label for="settingsName">Name:</label>
+            <input type="text" id="settingsName" name="name" placeholder="Your Name">
+          
+            <label for="settingsEmail">Email:</label>
+            <input type="email" id="settingsEmail" name="email" placeholder="Your Email">
+          
+            <label for="settingsPassword">Password:</label>
+            <input type="password" id="settingsPassword" name="password" placeholder="New Password">
+          
+            <label for="settingsConfirmPassword">Confirm Password:</label>
+            <input type="password" id="settingsConfirmPassword" name="confirm-password" placeholder="Confirm New Password">
+          
+            <h3>Notifications</h3>
+            <div class="checkbox-container">
+                <input type="checkbox" id="notify-email" name="notify-email" checked>
+                <label for="notify-email">Notify me by email</label>
+            </div>
+          
+            <div class="checkbox-container">
+                <input type="checkbox" id="notify-sms" name="notify-sms">
+                <label for="notify-sms">Notify me by SMS</label>
+            </div>
+          
+            <label for="settingsBio" style=" font-size: 24px;
+            margin-bottom: 10px;
+            margin-top: 30px;">Feedback</label>
+            <textarea id="settingsBio" name="bio"></textarea>
+          
+            <br><br>
+            <input type="button" value="Save Changes" onclick="updateProfile()">
+        </form>
+    </div>
+
+    <script src="settings.js"></script>
+</body>
+</html>

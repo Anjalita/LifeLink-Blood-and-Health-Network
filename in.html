@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LifeLink: Blood and Health Network</title>
+    <link rel="stylesheet" href="in.css">
+    <link rel="stylesheet" href="style6.css">
+    <style>
+    .chart-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center; 
+        justify-content: center; 
+        text-align: center; 
+        height: 400px; 
+        margin-bottom: 50px;
+    }
+
+    h2 {
+        font-size: 1.2cm;
+    }
+
+    .blood-list {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    .blood-list li {
+        font-size: 1.2em; 
+        margin: 4px ; 
+    }
+
+    hr {
+        border: 0; 
+        border-top: 2px solid #534aafb0; 
+        margin: 5px 0; 
+        margin-bottom: 5px;
+    }
+    .search-container {
+            position: absolute;
+            top: 70px; 
+            right: 50px; 
+            display: flex;
+            align-items: center;
+            gap: 7px; 
+            text-align: right;
+        }
+
+        #searchInput {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        .searchbtn img {
+            width: 24px;
+            height: 24px;
+            cursor: pointer;
+        }
+
+        table {
+            margin-top: 50px;
+            border-collapse: collapse;
+            width: 80%;
+            margin-bottom: 50px;
+            margin-left: 130px;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .test-results-table th {
+            background-color: #f4f4f4;
+        }
+        .test-results-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        .highlight {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logosec">
+            <div class="logo">Blood</div>
+            <img src="https://clipground.com/images/blood-logo-png-2.jpg" class="icn menuicn" id="menuicn" alt="menu-icon">
+        </div>
+        <div class="searchbar">
+            <input type="text" placeholder="Search">
+            <div class="searchbtn">
+                <img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210180758/Untitled-design-(28).png" class="icn srchicn" alt="search-icon">
+            </div>
+        </div>
+        <div class="message">
+            <div class="circle"></div>
+            <img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210183322/8.png" class="icn" alt="">
+            <div class="dp" id="dp" onclick="location.href='profile.html'">
+                <img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210180014/profile-removebg-preview.png" class="dpicn" alt="dp">
+            </div>
+        </div>
+    </header>
+
+    <div class="main-container">
+        <div class="navcontainer">
+            <nav class="nav">
+                <div class="nav-upper-options">
+                    <div class="nav-option option1">
+                        <img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210182148/Untitled-design-(29).png" class="nav-img" alt="dashboard">
+                        <h3>Dashboard</h3>
+                    </div>
+                   
+                    <div class="nav-option option3">
+                        <img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210183320/5.png" class="nav-img" alt="report">
+                        <a href="report.html">Report</a>
+                    </div>
+                    <div class="nav-option option4">
+                        <img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210183321/6.png" class="nav-img" alt="hospital">
+                        <a href="availability.html">Hospital</a>
+                    </div>
+                  
+                    <div class="nav-option option6">
+                        <img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210183320/4.png" class="nav-img" alt="settings">
+                        <a href="setting.html">Setting</a>
+                    </div>
+                    <div class="nav-option logout">
+                        <img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210183321/7.png" class="nav-img" alt="logout">
+                        <a href="#" onclick="logout(); return false;">Logout</a>
+                    </div>
+                    
+                </div>
+            </nav>
+        </div>
+
+        <div class="main">
+            <div class="searchbar2">
+                <input type="text" placeholder="Search">
+                <div class="searchbtn">
+                    <img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210180758/Untitled-design-(28).png" class="icn srchicn" alt="search-button">
+                </div>
+            </div>
+            <div class="box-container">
+                <!-- Boxes for Blood Types -->
+                <div class="box box1">
+                    <div class="text">
+                        <h2 class="topic-heading" style="font-weight: 900; font-size: 1cm;color: rgb(105, 3, 3);">A</h2>
+                        <h2 class="topic" style="font-size: 1em;">Blood type</h2>
+                        <label id="count" style="font-size: 1.5em;">4</label>
+                    </div>
+                </div>
+                <div class="box box2">
+                    <div class="text">
+                        <h2 class="topic-heading" style="font-weight: 900; font-size: 1cm; color:white;">AB</h2>
+                        <h2 class="topic" style="font-size: 1em;">Blood type</h2>
+                        <label id="count2" style="font-size: 1.5em;">6</label>
+                    </div>
+                </div>
+                <div class="box box3">
+                    <div class="text">
+                        <h2 class="topic-heading"  style="font-weight: 900;font-size: 1cm; color:rgb(105, 3, 3);">O-</h2>
+                        <h2 class="topic" style="font-size: 1em;">Blood type</h2>
+                        <label id="count3" style="font-size: 1.5em;">4</label>
+                    </div>
+                </div>
+                <div class="box box4">
+                    <div class="text">
+                        <h2 class="topic-heading"  style="font-weight: 900;font-size: 1cm; color:white;">O+</h2>
+                        <h2 class="topic" style="font-size: 1em;">Blood type</h2>
+                        <label id="count4" style="font-size: 1.5em;">9</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="report-container">
+                <div class="report-header">
+                    <h1 class="recent-Articles">Upcoming Blood Donation Camp</h1>
+                </div>
+                <div class="announcement">
+                    <h2 style="font-weight: 600;">Blood Donation Camp Details</h2>
+                    <p><strong>Date:</strong> August 15, 2024</p>
+                    <p><strong>Time:</strong> 10:00 AM - 4:00 PM</p>
+                    <p><strong>Location:</strong> City Hall Auditorium, Main Street</p>
+                    <p><strong>Contact:</strong> 123-456-7890</p>
+                    <p>Join us for a life-saving blood donation camp! Your contribution can make a difference. Refreshments and a small gift will be provided to all donors.</p>
+                </div>
+                <hr> 
+                <br><br>
+                <div class="chart-container">
+                    <h2 style="font-weight: 600">Blood Type Distribution</h2>
+                    <canvas id="bloodChart" width="25" height="50"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        window.addEventListener('load', () => {
+            var ctx = document.getElementById('bloodChart').getContext('2d');
+            var bloodChart = new Chart(ctx, {
+                type: 'pie',
+                data: {
+                    labels: ['A+', 'A-', 'AB+', 'AB-', 'O-', 'O+', 'B+', 'B-'],
+                    datasets: [{
+                        label: 'Blood Type Distribution',
+                        data: [4, 6, 4, 9, 5, 8, 7, 3], 
+                        backgroundColor: [
+                            '#FF6384', 
+                            '#36A2EB', 
+                            '#FFCE56', 
+                            '#4BC0C0', 
+                            '#626262',
+                            '#FF5733', 
+                            '#C70039', 
+                            '#900C3F'  
+                        ],
+                        borderColor: [
+                            '#fff', 
+                            '#fff', 
+                            '#fff', 
+                            '#fff', 
+                            '#fff', 
+                            '#fff', 
+                            '#fff', 
+                            '#fff'  
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    var label = context.label || '';
+                                    if (label) {
+                                        label += ': ';
+                                    }
+                                    if (context.parsed !== null) {
+                                        label += context.parsed + ' units';
+                                    }
+                                    return label;}}}
+                    }
+                }
+            });
+        });
+        function logout() {
+   
+    sessionStorage.clear();
+    localStorage.clear();
+    
+    // Redirect to index.html
+    window.location.href = 'index.html';
+}
+
+
+    function highlightText(text, searchTerm) {
+        const regex = new RegExp(`(${searchTerm})`, 'gi');
+        return text.replace(regex, '<span class="highlight">$1</span>');
+    }
+
+    document.getElementById('searchInput').addEventListener('input', function() {
+        var input = document.getElementById('searchInput');
+        var filter = input.value.toUpperCase();
+        var table = document.querySelector('.test-results-table');
+        var rows = table.getElementsByTagName('tr');
+
+        for (var i = 1; i < rows.length; i++) {
+            var cells = rows[i].getElementsByTagName('td');
+            var rowVisible = false;
+
+            for (var j = 0; j < cells.length; j++) {
+                var cell = cells[j];
+                var cellText = cell.textContent || cell.innerText;
+
+                if (cellText.toUpperCase().includes(filter)) {
+                    rowVisible = true;
+                    cell.innerHTML = highlightText(cellText, input.value);
+                } else {
+                    cell.innerHTML = cellText;
+                }
+            }
+
+            rows[i].style.display = rowVisible ? '' : 'none';
+        }
+    });
+
+    </script>
+    <script src="in.js"></script>
+    <script src="ok.js"></script>
+</body>
+</html>

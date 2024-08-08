@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="profile.css">
+    <title>LifeLink: Blood and Health Network</title>
+</head>
+<body>
+    <form id="profileForm">
+        <label for="profileName">Name:</label>
+        <input type="text" id="profileName" name="name" disabled>
+
+        <label for="profileEmail">Email:</label>
+        <input type="email" id="profileEmail" name="email" disabled>
+
+        <label for="profilePassword">Password:</label>
+        <input type="password" id="profilePassword" name="password">
+
+        <label for="profileAge">Age:</label>
+        <input type="number" id="profileAge" name="age">
+
+        <label for="profileGender">Gender:</label>
+        <select id="profileGender" name="gender">
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+        </select>
+
+        <label for="profileBio">Bio:</label>
+        <textarea id="profileBio" name="bio"></textarea>
+
+        <button type="button" onclick="saveProfile()">Save</button>
+        <button type="button" onclick="updateProfile()">Update</button>
+      
+    </form>
+
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+    <script src="profile.js"></script>
+</body>
+</html>

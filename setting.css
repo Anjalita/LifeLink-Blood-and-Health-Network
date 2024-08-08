@@ -1,0 +1,92 @@
+body {
+  font-family: Arial, sans-serif;
+}
+
+.settings-container {
+
+  width: 50%;
+  margin: 0 auto;
+}
+
+h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  margin-top: 30px;
+}
+
+form {
+  background-color: #f0f0f0;
+  padding: 30px;
+  border-radius: 5px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: #fff;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+textarea {
+  height: 150px;
+}
+
+input[type="button"] {
+  margin-top: 20px;
+  padding: 10px;
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+input[type="button"]:hover {
+  background-color: #45a049;
+}
+
+.checkbox-container {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.checkbox-container label,
+.radio-container label {
+  font-weight: normal;
+}
+
+.radio-container {
+  margin-bottom: 10px;
+}
+
+.radio-container input[type="radio"] {
+  display: none;
+}
+
+.radio-container input[type="radio"] + label:before {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+}
